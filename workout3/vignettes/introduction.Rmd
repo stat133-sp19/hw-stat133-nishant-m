@@ -1,0 +1,59 @@
+---
+title: "Getting Started with "
+author: "Nishant Mishra"
+date: "02/05/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+library(binomial)
+```
+
+## Binomial Package
+
+The package `"binomial"` is an encompassing binomial package for simulating binomial probability given a certain number of trials and given a certain probability.
+
+## Checker Functions
+
+The package encompasses various checker functions to determine if variables are valid inputs, as exemplified below
+
+```{r}
+check_prob(0.5)
+check_trials(5)
+check_success(3, 5)
+```
+
+## Private Auxiliary Functions
+There are various auxiliar functions that take two arguments: `"trials"` and `"prob"`, as exemplified below:
+```{r}
+aux_mean(10, 0.3)
+aux_variance(10, 0.3)
+aux_mode(10, 0.3)
+aux_skewness(10, 0.3)
+aux_kurtosis(10, 0.3)
+```
+
+## Binomial Probabilities
+The `"bin_choose"` function calculates the number of combinations in which k successes can occur in trials, as seen below:
+```{r}
+bin_choose(n = 5, k = 2)
+```
+
+The `"bin_probability"` function calculates the binomial probability, and can be used for vectorized numbers of successes too
+```{r}
+bin_probability(success = 2, trials = 5, prob = 0.5)
+bin_probability(success = 0:2, trials = 5, prob = 0.5)
+```
+
+The `"bin_distribution"` function calculates a data frame of a binomial distribution, as can be seen below:
+```{r}
+bin_distribution(trials = 5, prob = 0.5)
+```
+
+The `"bin_cumulative"` function calculates a cumulative data frame of a binomial distribution, as can be seen below:
+```{r}
+bin_cumulative(trials = 5, prob = 0.5)
+```
+
+The `"bin_variable"` function calculates a 
